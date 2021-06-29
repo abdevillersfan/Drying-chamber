@@ -1,0 +1,27 @@
+phi=float(input("Enter the latitude of a given location:"))
+m1=float(input("Enter the value of weight:"))        #in kg
+m2=float(input("Enter the value of weight:"))        #in kg
+t1=float(input("Enter the value of time:"))          #in hours
+t2=float(input("Enter the value of time:"))          #in hours
+w1=float(input("Enter the value of weight:"))        #weight of sample before drying
+w2=float(input("Enter the value of weight:"))        #weight of sample after drying
+w=float(input("Enter the value of weight:"))         #weight of water evaporated from fish
+l=float(input("Enter the latent heat value :"))      #latent heat of vaporization of water(kj/kg)
+ac=float(input("Enter the surface area value:"))     #surface area of collector,sq.m
+i=float(input("Enter the incident radiation value:"))#incident radiation in W/m^2
+T=float(input("Enter the value of time:"))           #time in hours
+v=float(input("Enter the air flow rate value:"))     #volumetric air flow rate in m^3/s
+rho=float(input("Enter the value of rho:"))          #density of air temperature elevator in kg/m^3
+cp=float(input("Enter the value of specific heat:")) #specific air heat in J/kgK
+beta=10+phi                                          #angle of tilt in degrees
+dr=(m1-m2)/abs((t1-t2))                              #drying rate in kg/hr
+mcdb=((w1-w2)/w2)*100                                #moisture content dry basis
+mcwb=((w1-w2)/w1)*100                                #moisture content wet basis
+n=(w*l)/(ac*i*T)*100                                 #system drying efficiency
+nc=(v*rho*cp*abs(t1-t2))/(ac*i)                      #collector efficiency
+print("Angle of tilt of given location is:",beta)
+print("Drying rate is:",dr)
+print("Moisture content dry basis is:",mcdb)
+print("Moisture content wet basis is:",mcwb)
+print("System drying efficiency is:",n)
+print("Collector efficiency is:",nc)
